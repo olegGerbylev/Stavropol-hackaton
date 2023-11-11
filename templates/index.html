@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Flask Number Input</title>
+</head>
+<body>
+    <h1>Введите число (вопросы по какому месту будем задавать):</h1>
+    <form method="post">
+        <input type="text" name="number">
+        <input type="submit" value="Отправить">
+    </form>
+
+    {% if user_number %}
+    <h2>Вопросы по тексту: {{ user_number }}</h2>
+    <h2>Введите ответ:</h2>
+    <form method="post">
+        <input type="text" name="user_answer">
+        <input type="submit" value="Отправить">
+    </form>
+
+    {% if user_answer %}
+    <h2>Правильность ответа: {{ user_answer }}</h2>
+    {% endif %}
+    {% endif %}
+</body>
+</html>
